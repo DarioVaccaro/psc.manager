@@ -1,6 +1,6 @@
 # psc.manager
 
-Export/Import GUI for Pro Scop Coordinator
+Export/Import GUI for Pro Shop Coordinator
 
 Classes
 -----
