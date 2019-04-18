@@ -4,7 +4,7 @@ from dbfread import DBF
 
 from directory import Directory
 from display import Display
-from io import IO
+# from io import IO
 
 class MANAGER(object):
     def __init__(self):
@@ -13,7 +13,7 @@ class MANAGER(object):
     def process_data(self):
         db_records = []
 
-        for record in DBF(self.directory.path + '/test.dbf'):
+        for record in DBF(self.directory.path() + '/backup1/ballsfl.dbf'):
             db_records.append(record)
         
         print(db_records)
