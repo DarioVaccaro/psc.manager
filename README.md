@@ -7,6 +7,7 @@ Classes
 
 * Display - GUI for user to interact with
 * IO - Input/Output for PSC Data
+* Directory - User directory where DB is located
 
 Libraries
 -----
