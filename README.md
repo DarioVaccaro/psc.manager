@@ -17,8 +17,8 @@ Libraries
 Todo
 -----
 
-Set up GUI
-Set up executable
+* Set up GUI
+* Set up executable
 
 License
 -----
