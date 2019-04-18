@@ -9,12 +9,14 @@ class Display(object):
         
         return self
 
-    def label(self , text):
-        return tkinter.Label(self.window , text = text).pack()
+    def label(self , text , fg , bg):
+        return tkinter.Label(self.window , text = text , fg = fg , bg = bg).pack()
 
 if __name__ == '__main__':
     display = Display()
     display.title('Pro Shop Coordinator Manager')
-    display.label('Hello World!')
+    display.label('Hello World!' , 'white' , 'black')
+
+    display.window.configure(background = 'black')
 
     display.window.mainloop()
