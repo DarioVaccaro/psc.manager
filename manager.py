@@ -13,7 +13,7 @@ class MANAGER(object):
     def process_data(self):
         db_records = []
 
-        for record in DBF(directory.path + 'test.dbf'):
+        for record in DBF(self.directory.path + '/test.dbf'):
             db_records.append(record)
         
         print(db_records)
