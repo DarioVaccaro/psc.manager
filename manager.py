@@ -26,24 +26,20 @@ class MANAGER(object):
                     print(e)
                     print('Error writing file: ' + doc)
 
-        def import_data(self):
-            print('Import')
-
 if __name__ == '__main__':
     main = MANAGER()
 
-    display = Display(700 , 500 , 'black')
+    display = Display(700 , 300 , 'black')
 
     width = display.window.winfo_screenwidth()
     height = display.window.winfo_screenheight()
 
 
     display.title('Pro Shop Coordinator Manager')
-    display.label('Pro Shop Coordinator Manager' , 'white' , 'black')
-    display.label('Import or export data in from csv format. Allows for easy control of  your pro shop data.' , 'white' , 'black')
+    display.label('PSC Manager' , 'white' , 'black' , 'San Francisco' , 30 , 'bold').pack(side = 'top' ,pady = 10)
+    display.label('Export data in from csv format. Allows for easy control of your pro shop data.' , 'white' , 'black').pack()
 
-    display.button('Import' , 400 , 200 , main.import_data)
-    display.button('Export' , 200 , 200 , main.export_data)
+    display.button('Export' , None , None , 2 , 20 , main.export_data).pack(side = 'bottom' , pady = 50)
 
     if(not width < display.width or not height < display.height):
         display.window.resizable(False , False)

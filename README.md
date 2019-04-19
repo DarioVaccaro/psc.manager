@@ -1,6 +1,6 @@
 # psc.manager
 
-Export/Import GUI for Pro Shop Coordinator
+Export GUI for Pro Shop Coordinator
 
 Classes
 -----
@@ -14,6 +14,7 @@ Libraries
 
 * Tkinter - Python GUI package
 * dBFread - dBase data interpreter 
+* pyInstaller - Creates executable for entire project
 
 Todo
 -----

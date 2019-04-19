@@ -16,13 +16,13 @@ class Display(object):
         
         return self
 
-    def label(self , text , fg , bg):
-        label = tkinter.Label(self.window , text = text , fg = fg , bg = bg).pack()
+    def label(self , text , fg , bg , font = 'San Francisco' , size = 12 , weight = 'normal'):
+        label = tkinter.Label(self.window , text = text , fg = fg , bg = bg , font = (font , size , weight))
 
         return label
 
-    def button(self , text , x , y , command):
-        button = tkinter.Button(self.window , text = text , command = command)
+    def button(self , text , x , y , height , width , command):
+        button = tkinter.Button(self.window , text = text , command = command , height = height, width = width)
         button.place(x = x, y = y)
 
         return button

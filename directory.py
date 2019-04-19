@@ -14,7 +14,5 @@ class Directory(object):
 
 
 if __name__ == '__main__':
-    # Look for PSC directory
-    # if none exists, take directory param from GUI
     directory = Directory()
     directory.path()
