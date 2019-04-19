@@ -4,7 +4,7 @@ from dbfread import DBF
 
 from directory import Directory
 from display import Display
-# from io import IO
+from comm import im , ex
 
 class MANAGER(object):
     def __init__(self):
@@ -13,10 +13,11 @@ class MANAGER(object):
     def process_data(self):
         db_records = []
 
-        for record in DBF(self.directory.path() + '/backup1/ballsfl.dbf'):
+        #  Loop through directory and export all files with .dbf to .csv files
+        for record in DBF(self.directory.path() + '/nameaddr.dbf'):
             db_records.append(record)
         
-        print(db_records)
+        ex(db_records , 'nameaddr')
 
 if __name__ == '__main__':
     main = MANAGER()
