@@ -10,15 +10,42 @@ class MANAGER(object):
     def __init__(self):
         self.directory = Directory()
 
-    def process_data(self):
-        db_records = []
+    def export_data(self):
+        file_list = os.listdir(self.directory.path())
 
-        #  Loop through directory and export all files with .dbf to .csv files
-        for record in DBF(self.directory.path() + '/nameaddr.dbf'):
-            db_records.append(record)
-        
-        ex(db_records , 'nameaddr')
+        for doc in file_list:
+            if '.dbf' in doc.lower():
+                db_records = []
+                try:
+                    for record in DBF(self.directory.path() + '/' + doc):
+                        db_records.append(record)
+
+                    filename = doc.lower().replace('.dbf' , '')
+                    ex(db_records , filename)
+                except Exception as e:
+                    print(e)
+                    print('Error writing file: ' + doc)
+
+        def import_data(self):
+            print('Import')
 
 if __name__ == '__main__':
     main = MANAGER()
-    main.process_data()
+
+    display = Display(700 , 500 , 'black')
+
+    width = display.window.winfo_screenwidth()
+    height = display.window.winfo_screenheight()
+
+
+    display.title('Pro Shop Coordinator Manager')
+    display.label('Pro Shop Coordinator Manager' , 'white' , 'black')
+    display.label('Import or export data in from csv format. Allows for easy control of  your pro shop data.' , 'white' , 'black')
+
+    display.button('Import' , 400 , 200 , main.import_data)
+    display.button('Export' , 200 , 200 , main.export_data)
+
+    if(not width < display.width or not height < display.height):
+        display.window.resizable(False , False)
+
+    display.window.mainloop()

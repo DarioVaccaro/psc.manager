@@ -14,6 +14,7 @@ def ex(data , filename):
             if(key not in keys):
                 keys.append(key)
 
+    # Export to JSON and CSV
     with open('var/' + filename + '.csv' , 'w') as export:
         writer = csv.DictWriter(export , fieldnames = keys)
         writer.writeheader()

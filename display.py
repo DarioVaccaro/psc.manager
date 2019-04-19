@@ -1,8 +1,15 @@
 import tkinter
 
+from comm import ex , im
+
 class Display(object):
-    def __init__(self):
+    def __init__(self , W , H , background):
         self.window = tkinter.Tk()
+        self.width = W
+        self.height = H
+        self.screen = self.window.geometry(str(W) + 'x' + str(H))
+
+        self.window.configure(background = background)
 
     def title(self , title):
         self.window.title(title)
@@ -14,26 +21,8 @@ class Display(object):
 
         return label
 
-    def button(self , text , x , y):
-        button = tkinter.Button(self.window , text = text)
+    def button(self , text , x , y , command):
+        button = tkinter.Button(self.window , text = text , command = command)
         button.place(x = x, y = y)
 
         return button
-
-
-if __name__ == '__main__':
-    display = Display()
-    display.title('Pro Shop Coordinator Manager')
-    display.label('Pro Shop Coordinator Manager' , 'white' , 'black')
-    display.label('Import or export data in from csv format. Allows for easy control of  your pro shop data.' , 'white' , 'black')
-
-    display.button('Import' , 400 , 200)
-    display.button('Export' , 200 , 200)
-
-    display.window.configure(background = 'black')
-    display.window.geometry('750x500')
-
-    # Resize if display is smaller than the givern coordinatess
-    display.window.resizable(False , False)
-
-    display.window.mainloop()
