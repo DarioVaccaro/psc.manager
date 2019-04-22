@@ -1,6 +1,7 @@
 import json
 import csv
 import os
+from pymongo import MongoClient
 
 class MIGRATE(object):
     def __init__(self , input):

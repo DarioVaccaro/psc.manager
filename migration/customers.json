@@ -1,14 +1,9 @@
 {
     "migrationGroup": "customers",
-    "process": {
-        "clientID": null,
-        "customerID": {
-            "function": "generateID"
-        },
-        "name": {
-            "field": ["FIRSTNAME" , "LASTNAME"],
-            "separator": " "
-        },
+    "manual": {
+        "clientID": null
+    },
+    "direct": {
         "email": "EMAILADDR",
         "birthday": "BIRTHDATE",
         "sex": "SEX",
@@ -22,9 +17,16 @@
         "phone": {
             "main": "PHONE",
             "work": "WPHONE"
-        },
-        "creationDate": {
-            "type": "date"
+        }
+    },
+    "functions": {
+        "customerID": "generate_id",
+        "creationDate": "generate_date"
+    },
+    "process": {
+        "name": {
+            "field": ["FIRSTNAME" , "LASTNAME"],
+            "separator": " "
         }
     }
 }
