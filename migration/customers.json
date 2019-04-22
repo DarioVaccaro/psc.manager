@@ -1,0 +1,30 @@
+{
+    "migrationGroup": "customers",
+    "process": {
+        "clientID": null,
+        "customerID": {
+            "function": "generateID"
+        },
+        "name": {
+            "field": ["FIRSTNAME" , "LASTNAME"],
+            "separator": " "
+        },
+        "email": "EMAILADDR",
+        "birthday": "BIRTHDATE",
+        "sex": "SEX",
+        "address": {
+            "street": "ADDRESS1",
+            "streetExtra": "ADDRESS2",
+            "city": "CITY",
+            "state": "STATE",
+            "zipCode": "ZIP"
+        },
+        "phone": {
+            "main": "PHONE",
+            "work": "WPHONE"
+        },
+        "creationDate": {
+            "type": "date"
+        }
+    }
+}
