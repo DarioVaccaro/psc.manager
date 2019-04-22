@@ -19,6 +19,9 @@
             "work": "WPHONE"
         }
     },
+    "unique": {
+        "migrateKey": "NAMEKEY"
+    },
     "functions": {
         "customerID": "generate_id",
         "creationDate": "generate_date"
