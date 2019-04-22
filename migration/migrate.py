@@ -1,7 +1,10 @@
 import json
 import csv
-import os
+import glob
+from os.path import dirname, basename, isfile
 from pymongo import MongoClient
+
+# Import all python files in directory
 
 def migration(source , map):
     migration = MIGRATE(source , map)
@@ -16,7 +19,6 @@ def migration(source , map):
         unique = migration.unique(row)
         for key in unique.keys():
             migration_object[key] = unique[key]
-        print(migration_object)
 
 class MIGRATE(object):
     def __init__(self , source , map):
@@ -57,4 +59,8 @@ class MIGRATE(object):
         print('Functions')
 
 if __name__ == '__main__':
-    customer_migration = migration('./bin/nameaddr.csv' , './migration/customers.json')
+    while True:
+        source = input('Enter Path of Source CSV: ')
+        map = input('Enter Path of Map JSON: ')
+
+        customer_migration = migration(source , map)
