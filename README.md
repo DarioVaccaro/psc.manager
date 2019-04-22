@@ -19,8 +19,7 @@ Libraries
 Todo
 -----
 
-* Set up GUI
-* Set up executable
+* Create Migration to PS.Manager Schema
 
 License
 -----
