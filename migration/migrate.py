@@ -1,12 +1,19 @@
 import json
 import csv
 import glob
-from os.path import dirname, basename, isfile
+import os
 from pymongo import MongoClient
 
 # Import all python files in directory
 
 def migration(source , map):
+    client = MongoClient(os.environ["MONGODB_PS_URI"] , 
+		connectTimeoutMS=30000,
+		socketTimeoutMS=None)
+
+    db = client.get_database()
+    customers = db.customers
+    
     migration = MIGRATE(source , map)
     manual = migration.manual()
     for row in migration.reader:
@@ -19,6 +26,15 @@ def migration(source , map):
         unique = migration.unique(row)
         for key in unique.keys():
             migration_object[key] = unique[key]
+        functions = migration.functions(row)
+        for key in functions.keys():
+            migration_object[key] = functions[key]
+        process = migration.process(row)
+        for key in process.keys():
+            migration_object[key] = process[key]
+        
+        print(migration_object)
+        customers.insert_one(migration_object)
 
 class MIGRATE(object):
     def __init__(self , source , map):
@@ -56,9 +72,29 @@ class MIGRATE(object):
         return unique_values
 
     def functions(self , row):
-        print('Functions')
+        functions_values = {}
+        for functions in self.map['functions'].keys():
+            map_key = self.map['functions'][functions]
+            functions_values[functions] = getattr(__import__(map_key['package']) , map_key['function'])(map_key['param'])
+        
+        return functions_values
+
+    def process(self , row):
+        process_values = {}
+        for process in self.map['process'].keys():
+            map_key = self.map['process'][process]
+            process_values[process] = ''
+            for value in map_key['field']:
+                process_values[process] += row[value] + map_key['separator']
+            process_values[process] = process_values[process][:-(len(str(map_key['separator'])))]
+        
+        return process_values
 
 if __name__ == '__main__':
+    path = os.path.abspath(__file__)
+    directory = os.path.dirname(path)
+    os.chdir(directory)
+
     while True:
         source = input('Enter Path of Source CSV: ')
         map = input('Enter Path of Map JSON: ')

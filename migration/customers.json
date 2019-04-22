@@ -23,8 +23,16 @@
         "migrateKey": "NAMEKEY"
     },
     "functions": {
-        "customerID": "generate_id",
-        "creationDate": "generate_date"
+        "customerID": {
+            "package": "customers",
+            "function": "generate_id",
+            "param": "cust"
+        },
+        "creationDate": {
+            "package": "customers",
+            "function": "generate_date",
+            "param": ""
+        }
     },
     "process": {
         "name": {
