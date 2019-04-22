@@ -1,16 +1,15 @@
 import sys
 import os
-
-def find_path():
-    return False
+from tkinter import filedialog
 
 class Directory(object):
     def __init__(self):
-        self.pathname = os.path
+        self.root = os.path
 
     def path(self):
-        if(find_path() == False):
-            return self.pathname.dirname('/Users/dvaccaro/Desktop/db_backup/BowlPS50/')
+        pathname = filedialog.askdirectory()
+
+        return pathname
 
 
 if __name__ == '__main__':

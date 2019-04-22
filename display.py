@@ -1,7 +1,5 @@
 import tkinter
 
-from comm import ex , im
-
 class Display(object):
     def __init__(self , W , H , background):
         self.window = tkinter.Tk()
@@ -16,7 +14,7 @@ class Display(object):
         
         return self
 
-    def label(self , text , fg , bg , font = 'San Francisco' , size = 12 , weight = 'normal'):
+    def label(self , text , fg , bg , font , size = 12 , weight = 'normal'):
         label = tkinter.Label(self.window , text = text , fg = fg , bg = bg , font = (font , size , weight))
 
         return label

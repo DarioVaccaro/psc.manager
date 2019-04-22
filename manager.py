@@ -4,20 +4,21 @@ from dbfread import DBF
 
 from directory import Directory
 from display import Display
-from comm import im , ex
+from comm import ex
 
 class MANAGER(object):
     def __init__(self):
         self.directory = Directory()
 
     def export_data(self):
-        file_list = os.listdir(self.directory.path())
+        path_name = self.directory.path()
+        file_list = os.listdir(path_name)
 
         for doc in file_list:
             if '.dbf' in doc.lower():
                 db_records = []
                 try:
-                    for record in DBF(self.directory.path() + '/' + doc):
+                    for record in DBF(path_name + '/' + doc):
                         db_records.append(record)
 
                     filename = doc.lower().replace('.dbf' , '')
@@ -37,7 +38,7 @@ if __name__ == '__main__':
 
     display.title('Pro Shop Coordinator Manager')
     display.label('PSC Manager' , 'white' , 'black' , 'San Francisco' , 30 , 'bold').pack(side = 'top' ,pady = 10)
-    display.label('Export data in from csv format. Allows for easy control of your pro shop data.' , 'white' , 'black').pack()
+    display.label('Export data in from csv format. Allows for easy control of your pro shop data.' , 'white' , 'black' , 'San Francisco').pack()
 
     display.button('Export' , None , None , 2 , 20 , main.export_data).pack(side = 'bottom' , pady = 50)
 

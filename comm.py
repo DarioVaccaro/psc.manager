@@ -2,9 +2,6 @@ import csv
 import json
 from collections import OrderedDict
 
-def im():
-    print('Import')
-
 def ex(data , filename):
     keys = []
 
