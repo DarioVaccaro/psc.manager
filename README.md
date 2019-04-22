@@ -16,11 +16,6 @@ Libraries
 * dBFread - dBase data interpreter 
 * pyInstaller - Creates executable for entire project
 
-Todo
------
-
-* Create Migration to PS.Manager Schema
-
 License
 -----
 
