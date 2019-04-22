@@ -19,6 +19,7 @@ Libraries
 Todo
 -----
 
+* Allow for Export Directory Selection
 * Create Migration to PS.Manager Schema
 
 License
