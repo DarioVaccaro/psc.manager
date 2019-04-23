@@ -4,8 +4,6 @@ import glob
 import os
 from pymongo import MongoClient
 
-# Import all python files in directory
-
 def migration(source , map):
     client = MongoClient(os.environ["MONGODB_PS_URI"] , 
 		connectTimeoutMS=30000,

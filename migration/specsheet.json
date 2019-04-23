@@ -1,0 +1,48 @@
+{
+    "migrationGroup": "balls",
+    "manual": {
+        "clientID": null
+    },
+    "direct": {
+        "date": "BALLDATE",
+        "specs": {
+            "ball": {
+                "weigth": "WEIGHT",
+                "serial": "SERIALNO",
+                "grossWeight": "",
+                "grossTopWeight": "",
+                "surface": "SURFTEXTUR",
+                "pinToCG": "",
+                "drilledTopBottomWeight": "ENDWTTOPB",
+                "drilledPosNegSideWeight": "ENDSIDEPM",
+                "drilledFingerThumbWeight": "ENDFTLIT",
+                "inscript": "INSCRIPT"
+            },
+            "grip": {
+                "gripType": "DRILLTYPE",
+                "thumbType": "THSLUG",
+                "thumbOvalWidth": "OVALWIDTHN",
+                "thumbOvalAngle": "OVALANGLEN"
+            },
+            "comments": "DRCOMMENTS"
+        }
+    },
+    "unique": {
+        "migrateKey": "NAMEKEY"
+    },
+    "functions": {
+        "creationDate": {
+            "package": "specsheet",
+            "function": "generate_date",
+            "param": ""
+        },
+        "specSheetID": {
+            "package": "specsheet",
+            "function": "generate_id",
+            "param": "spec"
+        }
+    },
+    "process": {
+
+    }
+}
