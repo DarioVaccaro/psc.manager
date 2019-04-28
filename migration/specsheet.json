@@ -1,5 +1,5 @@
 {
-    "migrationGroup": "balls",
+    "migrationGroup": "specsheet",
     "manual": {
         "clientID": null
     },
@@ -19,13 +19,47 @@
                 "inscript": "INSCRIPT"
             },
             "grip": {
+                "hand": "LEFTRIGHT",
                 "gripType": "DRILLTYPE",
-                "thumbType": "THSLUG",
-                "thumbOvalWidth": "OVALWIDTHN",
-                "thumbOvalAngle": "OVALANGLEN"
+                "finger": {
+                    "left": {
+                        "fingerType": "L2GRIP",
+                        "gripSize": "L2GRIPSIZE",
+                        "holeSize": "L2HOLESIZE"
+                    },
+                    "right": {
+                        "fingerType": "R1GRIP",
+                        "gripSize": "R1GRIPSIZE",
+                        "holeSize": "R1HOLESIZE"
+                    }
+                },
+                "thumb": {
+                    "thumbType": "THSLUG",
+                    "thumbOvalWidth": "OVALWIDTHN",
+                    "thumbOvalAngle": "OVALANGLEN",
+                    "slugSize": "THSLUGSIZE",
+                    "holeSize": "THHOLESIZE"
+                }
             },
-            "comments": "DRCOMMENTS"
-        }
+            "weightHole":{
+                "size": "WHSIZE",
+                "depth": "WHDEPTH",
+                "weight": "WHWEIGHT",
+                "over": "WHOVER",
+                "up": "WHUP"
+            },
+            "bridge": {
+                "cutToCut": {
+                    "left": "L2CUTTOCUT",
+                    "right": "R1CUTTOCUT"
+                },
+                "span": {
+                    "left": "L2SPAN",
+                    "right": "R1SPAN"
+                }
+            }
+        },
+        "comments": "DRCOMMENTS"
     },
     "unique": {
         "migrateKey": "NAMEKEY"

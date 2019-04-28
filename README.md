@@ -19,4 +19,4 @@ Libraries
 License
 -----
 
-MIT Licensed. Use this shit all you want
+MIT Licensed. Use this stuff all you want
