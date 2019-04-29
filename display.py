@@ -9,6 +9,9 @@ class Display(object):
 
         self.window.configure(background = background)
 
+    def __repr__(self):
+        return 'tKinter Display of Width: {} and Height: {}'.format(self.width , self.height)
+
     def title(self , title):
         self.window.title(title)
         
