@@ -7,10 +7,9 @@
         "date": "BALLDATE",
         "specs": {
             "ball": {
-                "weigth": "WEIGHT",
                 "serial": "SERIALNO",
-                "grossWeight": "",
-                "grossTopWeight": "",
+                "grossWeight": "WEIGHT",
+                "grossTopWeight": "TOPWEIGHT",
                 "surface": "SURFTEXTUR",
                 "pinToCG": "",
                 "pinDistance": "PININOUT",
@@ -18,12 +17,12 @@
                 "drilledTopBottomWeight": {
                     "top": "ENDWTTOPB",
                     "bottom": "ENDWTTOPB",
-                    "value": 
+                    "value": ""
                 },
                 "drilledPosNegSideWeight": {
                     "negative": "ENDSIDEPM",
                     "positive": "ENDSIDEPM",
-                    "value": "ENDSIDEWH"
+                    "value": ""
                 },
                 "drilledFingerThumbWeight": {
                     "finger": "ENDFTLIT",
@@ -38,33 +37,65 @@
                 "finger": {
                     "left": {
                         "fingerType": "L2GRIP",
+                        "fingerOval": "F2OVALSIZE",
                         "gripSize": "L2GRIPSIZE",
                         "holeSize": "L2HOLESIZE",
                         "pitchLinear": {
-                            "forward": "THPITCHF",
-                            "reverse": "THPITCHF",
-                            "value": "THPITCHF2"
+                            "forward": "L2PITCHF",
+                            "reverse": "L2PITCHF",
+                            "value": "L2PITCHF2"
                         },
                         "pitchLateral": {
-                            "left": "THPITCH",
-                            "right": "THPITCH",
-                            "value": "THPITCH2"
+                            "left": "L2PITCH",
+                            "right": "L2PITCH",
+                            "value": "L2PITCH2"
+                        }
+                    },
+                    "leftAlt": {
+                        "fingerType": "L1GRIP",
+                        "gripSize": "L1GRIPSIZE",
+                        "holeSize": "L1HOLESIZE",
+                        "pitchLinear": {
+                            "forward": "L1PITCHF",
+                            "reverse": "L1PITCHF",
+                            "value": "L1PITCHF2"
+                        },
+                        "pitchLateral": {
+                            "left": "L1PITCH",
+                            "right": "L1PITCH",
+                            "value": "L1PITCH2"
                         }
                     },
                     "right": {
                         "fingerType": "R1GRIP",
+                        "fingerOval": "F3OVALSIZE",
                         "gripSize": "R1GRIPSIZE",
                         "holeSize": "R1HOLESIZE",
                         "pitchLinear": {
-                        "forward": "THPITCHF",
-                        "reverse": "THPITCHF",
-                        "value": "THPITCHF2"
+                            "forward": "R1PITCHF",
+                            "reverse": "R1PITCHF",
+                            "value": "R1PITCHF2"
+                        },
+                        "pitchLateral": {
+                            "left": "R1PITCH",
+                            "right": "R1PITCH",
+                            "value": "R1PITCH2"
+                        }
                     },
-                    "pitchLateral": {
-                        "left": "THPITCH",
-                        "right": "THPITCH",
-                        "value": "THPITCH2"
-                    }
+                    "rightAlt": {
+                        "fingerType": "R2GRIP",
+                        "gripSize": "R2GRIPSIZE",
+                        "holeSize": "R2HOLESIZE",
+                        "pitchLinear": {
+                            "forward": "R2PITCHF",
+                            "reverse": "R2PITCHF",
+                            "value": "R2PITCHF2"
+                        },
+                        "pitchLateral": {
+                            "left": "R2PITCH",
+                            "right": "R2PITCH",
+                            "value": "R2PITCH2"
+                        }
                     }
                 },
                 "thumb": {
@@ -110,9 +141,9 @@
                     "value": "HAXIS"
                 },
                 "vertical": {
-                    "over": "HAXISLR",
-                    "up":"HAXISLR",
-                    "value": "HAXIS"
+                    "up": "VAXISUORD",
+                    "down":"VAXISUORD",
+                    "value": "VAXIS"
                 }
             }
         },
@@ -132,8 +163,5 @@
             "function": "generate_id",
             "param": "spec"
         }
-    },
-    "process": {
-
     }
 }
