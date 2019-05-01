@@ -13,9 +13,23 @@
                 "grossTopWeight": "",
                 "surface": "SURFTEXTUR",
                 "pinToCG": "",
-                "drilledTopBottomWeight": "ENDWTTOPB",
-                "drilledPosNegSideWeight": "ENDSIDEPM",
-                "drilledFingerThumbWeight": "ENDFTLIT",
+                "pinDistance": "PININOUT",
+                "layout": "DRILLING",
+                "drilledTopBottomWeight": {
+                    "top": "ENDWTTOPB",
+                    "bottom": "ENDWTTOPB",
+                    "value": 
+                },
+                "drilledPosNegSideWeight": {
+                    "negative": "ENDSIDEPM",
+                    "positive": "ENDSIDEPM",
+                    "value": "ENDSIDEWH"
+                },
+                "drilledFingerThumbWeight": {
+                    "finger": "ENDFTLIT",
+                    "thumb": "ENDFTLIT",
+                    "value": "ENDFINGTH"
+                },
                 "inscript": "INSCRIPT"
             },
             "grip": {
@@ -25,12 +39,32 @@
                     "left": {
                         "fingerType": "L2GRIP",
                         "gripSize": "L2GRIPSIZE",
-                        "holeSize": "L2HOLESIZE"
+                        "holeSize": "L2HOLESIZE",
+                        "pitchLinear": {
+                            "forward": "THPITCHF",
+                            "reverse": "THPITCHF",
+                            "value": "THPITCHF2"
+                        },
+                        "pitchLateral": {
+                            "left": "THPITCH",
+                            "right": "THPITCH",
+                            "value": "THPITCH2"
+                        }
                     },
                     "right": {
                         "fingerType": "R1GRIP",
                         "gripSize": "R1GRIPSIZE",
-                        "holeSize": "R1HOLESIZE"
+                        "holeSize": "R1HOLESIZE",
+                        "pitchLinear": {
+                        "forward": "THPITCHF",
+                        "reverse": "THPITCHF",
+                        "value": "THPITCHF2"
+                    },
+                    "pitchLateral": {
+                        "left": "THPITCH",
+                        "right": "THPITCH",
+                        "value": "THPITCH2"
+                    }
                     }
                 },
                 "thumb": {
@@ -38,7 +72,17 @@
                     "thumbOvalWidth": "OVALWIDTHN",
                     "thumbOvalAngle": "OVALANGLEN",
                     "slugSize": "THSLUGSIZE",
-                    "holeSize": "THHOLESIZE"
+                    "holeSize": "THHOLESIZE",
+                    "pitchLinear": {
+                        "forward": "THPITCHF",
+                        "reverse": "THPITCHF",
+                        "value": "THPITCHF2"
+                    },
+                    "pitchLateral": {
+                        "left": "THPITCH",
+                        "right": "THPITCH",
+                        "value": "THPITCH2"
+                    }
                 }
             },
             "weightHole":{
@@ -49,6 +93,7 @@
                 "up": "WHUP"
             },
             "bridge": {
+                "value": "BRIDGE1",
                 "cutToCut": {
                     "left": "L2CUTTOCUT",
                     "right": "R1CUTTOCUT"
@@ -56,6 +101,18 @@
                 "span": {
                     "left": "L2SPAN",
                     "right": "R1SPAN"
+                }
+            },
+            "axis": {
+                "horizontal": {
+                    "left": "HAXISLR",
+                    "right":"HAXISLR",
+                    "value": "HAXIS"
+                },
+                "vertical": {
+                    "over": "HAXISLR",
+                    "up":"HAXISLR",
+                    "value": "HAXIS"
                 }
             }
         },
