@@ -1,2 +1,2 @@
 dbfred==2.0.7
-pyinstaller==3.4
+pyinstaller==3.6
